@@ -71,17 +71,20 @@ void spiral() {
 // UTILITY FUNCTIONS
 
 boolean checkPrime(int num) {
-  Boolean prime = true;
-  if (num == 1) {
-   prime = false; 
-  } else {
-    for (int i = 2 ; i <= num/2 ; i++) {
-       if (num%i == 0 && num != 2) {
-        prime = false; 
+  boolean prime = true;
+       if (num <= 1) {
+          return false;
+       } else if (num == 2) {
+          return true;
        }
-     }
-  }
-  return prime; 
+       
+       int sqRoot =  Math.floor(Math.pow(i,0.5)); 
+
+       for (int denom = 2 ; denom <= sqRoot ; denom++) {
+          if (num%denom == 0) prime = false;
+       }
+
+    return prime; 
 }
 
 
